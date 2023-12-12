@@ -8,7 +8,7 @@ let iscurrentnum = false;
 
 function evaluate(exp){
     const comps = exp.split(' ');
-    if (comps.length() === 1){
+    if (comps.length === 1){
         return exp;
     }
     const op = comps[1];
@@ -25,7 +25,6 @@ function evaluate(exp){
     } else {
         result = (num1/num2);
     }
-
     return result.toString();
 
 }
@@ -63,7 +62,13 @@ function buttonClicked(){
         }
     } else if (id === "equal"){
         if (iscurrentnum){
-            const exp = prev.textContent.slice(1) + " " + current.textContent;
+            let exp = ""
+            if (prev.textContent.slice(1) != ""){
+                exp = prev.textContent.slice(1) + " " + current.textContent;
+            } else {
+                exp = current.textContent; 
+            }
+            console.log(exp);
             prev.textContent = "";
             current.textContent = evaluate(exp);
             op_count = 0;
