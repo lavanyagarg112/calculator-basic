@@ -68,7 +68,6 @@ function buttonClicked(){
             } else {
                 exp = current.textContent; 
             }
-            console.log(exp);
             prev.textContent = "";
             current.textContent = evaluate(exp);
             op_count = 0;
