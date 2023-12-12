@@ -39,6 +39,9 @@ function buttonClicked(){
         op_count = 0;
     } else if (id === "delete"){
         current.textContent = (current.textContent).slice(0,-1);
+        if (current.textContent == ""){
+            iscurrentnum = false;
+        }
     } else if ((id === 'add' || id === 'subtract' || id === 'multiply' || id === 'divide')) {
         if (iscurrentnum){
             prev.textContent = prev.textContent + " " + current.textContent + " " + num;
