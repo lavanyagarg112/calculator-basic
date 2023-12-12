@@ -8,6 +8,9 @@ let iscurrentnum = false;
 
 function evaluate(exp){
     const comps = exp.split(' ');
+    if (comps.length() === 1){
+        return exp;
+    }
     const op = comps[1];
     const num1 = Number(comps[0])
     const num2 = Number(comps[2])
